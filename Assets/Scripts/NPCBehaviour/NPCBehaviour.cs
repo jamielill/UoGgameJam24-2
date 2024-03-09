@@ -2,59 +2,56 @@ using UnityEngine;
 
 public class NPCBehavior : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float boundaryLeft = -5f;
-    public float boundaryRight = 5f;
-    public Transform targetPosition; // Assign the camera or a specific point you want the NPC to move towards
-    public float stopDistance = 20f; // Distance from the target position to stop
+    public float idleMoveSpeed = 2f; // Speed for idle movement left to right.
+    public float approachSpeed = 3f; // Speed when approaching the player.
+    public Transform targetPosition; // Target to approach, typically the camera/player.
+    private bool isMovingToCamera = false; // Indicates whether the NPC is moving towards the camera.
+    private float leftBound = -5f; // Left boundary for idle movement.
+    private float rightBound = 5f; // Right boundary for idle movement.
+    private float direction = 1f; // Direction of movement, 1 for right, -1 for left.
 
-    private bool isTriggered = false;
+    void Start()
+    {
+        if (targetPosition == null)
+        {
+            targetPosition = Camera.main.transform; // Default to main camera if not set.
+        }
+    }
 
     void Update()
     {
-        if (!isTriggered)
+        if (!isMovingToCamera)
         {
-            // NPC Idle movement: Move between boundaries
             IdleMovement();
         }
-
-        // When W is pressed, trigger the NPC to move towards the target position
-        if (Input.GetKeyDown(KeyCode.W))
+        else
         {
-            isTriggered = true;
+            MoveTowardsCamera();
         }
 
-        if (isTriggered)
+        // Check for input to start moving towards the camera.
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            // Face the camera/target and move towards it until reaching the stop distance
-            FaceTarget();
-            MoveTowardsTarget();
+            isMovingToCamera = true;
         }
     }
 
     void IdleMovement()
     {
-        float step = moveSpeed * Time.deltaTime;
-        float targetX = Mathf.PingPong(Time.time * moveSpeed, boundaryRight - boundaryLeft) + boundaryLeft;
-        transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
+        // Move left and right between the bounds.
+        if(transform.position.x >= rightBound || transform.position.x <= leftBound)
+        {
+            direction *= -1; // Change direction at bounds.
+        }
+        transform.position += new Vector3(idleMoveSpeed * direction * Time.deltaTime, 0, 0);
     }
 
-    void FaceTarget()
+    void MoveTowardsCamera()
     {
-        Vector3 directionToTarget = targetPosition.position - transform.position;
-        directionToTarget.y = 0; // Keep the NPC upright, ignore the y-axis difference
-        Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * moveSpeed);
-    }
-
-    void MoveTowardsTarget()
-    {
-        // Stop moving towards the target if within stopDistance on the z-axis
-        if (Vector3.Distance(transform.position, targetPosition.position) <= stopDistance)
-            return;
-
-        // Move directly towards the target position at moveSpeed
+        // Move directly towards the camera
         Vector3 moveDirection = (targetPosition.position - transform.position).normalized;
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        // Optionally ignore the y component to keep movement horizontal.
+        moveDirection.y = 0;
+        transform.position += moveDirection * approachSpeed * Time.deltaTime;
     }
 }

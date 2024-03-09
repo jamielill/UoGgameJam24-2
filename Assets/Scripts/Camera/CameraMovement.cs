@@ -6,7 +6,7 @@ public class CameraControl : MonoBehaviour
     public float rotationSpeed = 90f;
 
     private bool isRotating = false; 
-    private float targetYRotation = 0f;  // scrapped
+    private float targetYRotation = 0f;  //
 
     void Update()
     {
