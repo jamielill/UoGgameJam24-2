@@ -335,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OptionsMenu: {fileID: 8315669293177535504}
   MainMenu: {fileID: 921937808802866043}
+  sceneName: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
 --- !u!1 &4048889332599203414
 GameObject:
   m_ObjectHideFlags: 0
