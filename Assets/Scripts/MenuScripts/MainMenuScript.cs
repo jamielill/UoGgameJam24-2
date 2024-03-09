@@ -17,9 +17,9 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("quit button was pressed");
     }
 
-    public void LoadGame()
+    public void LoadGame(string scenename)
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(scenename);
         Debug.Log("the new game button was pressed");
     }
     
