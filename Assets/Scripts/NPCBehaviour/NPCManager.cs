@@ -3,62 +3,44 @@ using System.Collections.Generic;
 
 public class NPCManager : MonoBehaviour
 {
-    public GameObject[] npcPrefabs; // Array to hold NPC prefabs
-    private static List<NPCBehavior> idleNPCs = new List<NPCBehavior>();
-    private static bool isAnyNPCActive = false;
+    public GameObject npcPrefab;
+    private List<NPCBehavior> npcs = new List<NPCBehavior>();
+    private NPCBehavior currentNPC;
 
-    /*void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
-            CreateRandomNPC();
+            SpawnNPC();
         }
-        
-        if (Input.GetKeyDown(KeyCode.W) && !isAnyNPCActive)
+
+        if (Input.GetKeyDown(KeyCode.W) && currentNPC == null)
         {
-            TryActivateNPC();
+            ActivateNPC();
         }
-    }*/
 
-    public void CreateRandomNPC()
-    {
-        if (npcPrefabs.Length == 0) return;
-
-        int randomIndex = Random.Range(0, npcPrefabs.Length);
-        GameObject npcPrefab = npcPrefabs[randomIndex];
-        Vector3 spawnPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-        Instantiate(npcPrefab, spawnPosition, Quaternion.identity);
-    }
-
-    public static void RegisterIdleNPC(NPCBehavior npc)
-    {
-        if (!idleNPCs.Contains(npc))
+        if (Input.GetKeyDown(KeyCode.E) && currentNPC != null)
         {
-            idleNPCs.Add(npc);
+            currentNPC.BeginLeaving();
+            currentNPC = null; // Allow a new NPC to be activated.
         }
     }
 
-    public static void UnregisterIdleNPC(NPCBehavior npc)
+    void SpawnNPC()
     {
-        idleNPCs.Remove(npc);
+        Vector3 spawnPosition = new Vector3(Random.Range(-10, 10), 0, 10); // Customize as needed
+        GameObject npcObject = Instantiate(npcPrefab, spawnPosition, Quaternion.identity);
+        NPCBehavior npcBehavior = npcObject.GetComponent<NPCBehavior>();
+        npcs.Add(npcBehavior);
     }
 
-    /*public static void TryActivateNPC()
+    void ActivateNPC()
     {
-        if (isAnyNPCActive || idleNPCs.Count == 0) return;
-
-        int randomIndex = Random.Range(0, idleNPCs.Count);
-        idleNPCs[randomIndex].Activate();
-        isAnyNPCActive = true;
-    }*/
-
-    public static void NPCDeactivated()
-    {
-        isAnyNPCActive = false;
+        if (npcs.Count > 0)
+        {
+            currentNPC = npcs[0];
+            currentNPC.BeginApproach();
+            npcs.RemoveAt(0); // Remove the NPC from the list to prevent reactivation.
+        }
     }
-    public static void NPCActivated()
-    {
-    isAnyNPCActive = true;
-    }
-
 }
