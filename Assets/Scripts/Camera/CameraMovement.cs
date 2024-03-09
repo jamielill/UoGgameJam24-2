@@ -11,15 +11,15 @@ public class CameraControl : MonoBehaviour
     void Update()
     {
         // Trigger rotation to -90 degrees when "a" is pressed, if not already rotating
-        if (Input.GetKeyDown(KeyCode.A) && !isRotating && Mathf.Abs(transform.eulerAngles.y - (-90)) > 0.01f)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            StartCoroutine(RotateCamera(-90));
+            left(); 
         }
 
         // Trigger rotation back to 0 degrees when "d" is pressed, if not already rotating
-        if (Input.GetKeyDown(KeyCode.D) && !isRotating && Mathf.Abs(transform.eulerAngles.y - 0) > 0.01f)
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            StartCoroutine(RotateCamera(0));
+            right();
         }
     }
 
@@ -37,6 +37,22 @@ public class CameraControl : MonoBehaviour
 
         transform.rotation = targetRotation; // Ensure the rotation exactly reaches the target
         isRotating = false;
+    }
+
+    public void left()
+    {
+        if (!isRotating && Mathf.Abs(transform.eulerAngles.y - (-90)) > 0.01f)
+        {
+            StartCoroutine(RotateCamera(-90));
+        }
+    }
+
+    public void right()
+    {
+        if (!isRotating && Mathf.Abs(transform.eulerAngles.y - 0) > 0.01f)
+        {
+            StartCoroutine(RotateCamera(0));
+        }
     }
 }
 
