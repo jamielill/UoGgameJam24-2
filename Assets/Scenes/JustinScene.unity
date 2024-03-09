@@ -966,10 +966,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDist: 50
-  candy: {fileID: 386551091}
+  candyObject: {fileID: 386551091}
+  candyVisual: {fileID: 1727790361}
   itemPosOnShelf: {fileID: 327072510}
   smoothTime: 60
-  currentCandyParticles: {fileID: 0}
+  currentCandyParticles: {fileID: 1735281648238089571}
 --- !u!1 &977488084
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,7 +2335,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 35
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -2539,7 +2540,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2

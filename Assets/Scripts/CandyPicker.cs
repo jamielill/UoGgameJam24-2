@@ -13,7 +13,7 @@ public class CandyPicker : MonoBehaviour
     private bool isPouringSweets;
 
 
-    [SerializeField] GameObject candy;
+    [SerializeField] GameObject candyObject, candyVisual;
     [SerializeField] Transform itemPosOnShelf;
     Vector3 mousePos;
 
@@ -28,7 +28,9 @@ public class CandyPicker : MonoBehaviour
         chosenItem = null;
         isItemChosen = false;
 
-        candy.transform.position = itemPosOnShelf.position;
+        candyObject.transform.position = itemPosOnShelf.position;
+
+        currentCandyParticles.Pause();
     }
 
     void Update()
@@ -50,7 +52,14 @@ public class CandyPicker : MonoBehaviour
             if (isPouringSweets)
             {
                 //something here when the candy is being poured
+                currentCandyParticles.Play();
+                Debug.Log("particles");
 
+            }
+            else
+            {
+                currentCandyParticles.Pause();
+                currentCandyParticles.Clear();
             }
         }
         else
@@ -113,7 +122,7 @@ public class CandyPicker : MonoBehaviour
 
 
             //candy.transform.position = Vector3.Lerp(candy.transform.position, itemPosOnShelf.position, Time.deltaTime* smoothTime);
-            candy.transform.position = itemPosOnShelf.position;
+            candyObject.transform.position = itemPosOnShelf.position;
         }
 
     }
@@ -125,13 +134,13 @@ public class CandyPicker : MonoBehaviour
 
         //move object to follow mouse cursor
         mousePos =  cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, (Input.mousePosition.z + 4.67f)));
-        candy.transform.position = Vector3.SmoothDamp(candy.transform.position, mousePos, ref vel, Time.deltaTime * smoothTime);
+        candyObject.transform.position = Vector3.SmoothDamp(candyObject.transform.position, mousePos, ref vel, Time.deltaTime * smoothTime);
 
 
         //rotate to always face the camera
-        Vector3 pos = candy.transform.position - cam.transform.position;
+        Vector3 pos = candyVisual.transform.position - cam.transform.position;
         Quaternion rotation = Quaternion.LookRotation(pos);
-        candy.transform.rotation = rotation;
+        candyVisual.transform.rotation = rotation;
        
     }
 
