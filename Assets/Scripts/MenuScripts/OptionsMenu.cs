@@ -16,6 +16,8 @@ public class Optionsmenuscript : MonoBehaviour
     public TMP_Dropdown qualityDropdown;
     public TMP_Dropdown aaDropdown;
     public AudioMixer MasterMix;
+    public GameObject Controls;
+    public GameObject Options;
 
     private void Start()
     {
@@ -90,5 +92,17 @@ public class Optionsmenuscript : MonoBehaviour
     public void SetSFXLevel(float sfxlevel)
     {
         MasterMix.SetFloat("SoundEffects", sfxlevel);
+    }
+
+    public void ShowControls()
+    {
+        Options.SetActive(false);
+        Controls.SetActive(true);
+    }
+
+    public void HideControls()
+    {
+        Options.SetActive(true);
+        Controls.SetActive(false);
     }
 }
