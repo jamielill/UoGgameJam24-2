@@ -23,6 +23,7 @@ public class CandyPicker : MonoBehaviour
     Vector3 vel = Vector3.zero;
 
     [SerializeField] ParticleSystem currentCandyParticles;
+    [SerializeField] Material[] candyMats;
 
     void Start()
     {
@@ -152,6 +153,7 @@ public class CandyPicker : MonoBehaviour
     {
         ParticleSystem.MainModule psMain = currentCandyParticles.main;
         ParticleSystem.ShapeModule psShape = currentCandyParticles.shape;
+        //Material psMat = currentCandyParticles.GetComponent<ParticleSystemRenderer>().material;
 
         switch (chosenItem.name)
         {
@@ -159,42 +161,54 @@ public class CandyPicker : MonoBehaviour
                 //
                 psMain.startSize = 0.4f;
                 psMain.startSpeed = 2;
-                psMain.startColor = Color.white;
+                //psMain.startColor = Color.white;
+
+                currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[0];
 
                 break;
             case "Item2":
                 //
                 psMain.startSize = 0.1f;
                 psMain.startSpeed = 1;
-                psMain.startColor = Color.red;
+                //psMain.startColor = Color.red;
+
+                currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[1];
 
                 break;
             case "Item3":
                 //
                 psMain.startSize = 0.7f;
                 psMain.startSpeed = 3;
-                psMain.startColor = Color.blue;
+                //psMain.startColor = Color.blue;
+
+                currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[2];
 
                 break;
             case "Item4":
                 //
                 psMain.startSize = 0.5f;
                 psMain.startSpeed = 2;
-                psMain.startColor = Color.yellow;
+                //psMain.startColor = Color.yellow;
+
+                currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[3];
 
                 break;
             case "Item5":
                 //
                 psMain.startSize = .6f;
                 psMain.startSpeed = 4;
-                psMain.startColor = Color.magenta;
+                //psMain.startColor = Color.magenta;
+
+                currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[4];
 
                 break;
             case "Item6":
                 //
                 psMain.startSize = 1f;
                 psMain.startSpeed = 1;
-                psMain.startColor = Color.cyan;
+                //psMain.startColor = Color.cyan;
+
+                currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[5];   
 
                 break;
 

@@ -971,6 +971,13 @@ MonoBehaviour:
   itemPosOnShelf: {fileID: 327072510}
   smoothTime: 60
   currentCandyParticles: {fileID: 1735281648238089571}
+  candyMats:
+  - {fileID: 2100000, guid: 8c0747ad484da9349b3fde968017221a, type: 2}
+  - {fileID: 2100000, guid: 7d438a56e0b2b184083a2e25ba9dde9d, type: 2}
+  - {fileID: 2100000, guid: dd89b2f7d327ccc4c95191da4c351396, type: 2}
+  - {fileID: 2100000, guid: 4b7a3fc32d74e34418d3d6c08fc23da2, type: 2}
+  - {fileID: 2100000, guid: 7d438a56e0b2b184083a2e25ba9dde9d, type: 2}
+  - {fileID: 2100000, guid: 8c0747ad484da9349b3fde968017221a, type: 2}
 --- !u!1 &977488084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,7 +1905,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9150943, g: 0.34100214, b: 0.34100214, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6576,7 +6583,7 @@ ParticleSystemRenderer:
   m_VertexStreams: 00010304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
