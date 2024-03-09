@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Optionsmenuscript : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class Optionsmenuscript : MonoBehaviour
     public TMP_Dropdown textureDropdown;
     public TMP_Dropdown qualityDropdown;
     public TMP_Dropdown aaDropdown;
-    public Slider Audio;
     public AudioMixer MasterMix;
 
     private void Start()
@@ -76,14 +76,15 @@ public class Optionsmenuscript : MonoBehaviour
         Debug.Log(textureDropdown.value);
     }
 
-    public void MasterVolume(float masterLevel)
+    public void MainVolume(float slidervalue)
     {
-        MasterMix.SetFloat("MasterMix", masterLevel);
+        MasterMix.SetFloat("MainMix", Mathf.Log10(slidervalue) * 20);
+        Debug.Log(slidervalue);
     }
 
     public void SetMusicLvl(float musicLvl)
     {
-        MasterMix.SetFloat("Music", musicLvl);
+        MasterMix.SetFloat("Music", Mathf.Log10(musicLvl) * 20);
     }
 
     public void SetSFXLevel(float sfxlevel)
