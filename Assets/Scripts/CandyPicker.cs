@@ -21,6 +21,8 @@ public class CandyPicker : MonoBehaviour
     [SerializeField] float smoothTime = 10f;
     Vector3 vel = Vector3.zero;
 
+    [SerializeField] ParticleSystem currentCandyParticles;
+
     void Start()
     {
         chosenItem = null;
@@ -47,6 +49,7 @@ public class CandyPicker : MonoBehaviour
 
             if (isPouringSweets)
             {
+                //something here when the candy is being poured
 
             }
         }
@@ -132,6 +135,11 @@ public class CandyPicker : MonoBehaviour
        
     }
 
+
+    void CandyParticles()
+    {
+
+    }
 
 
 }
