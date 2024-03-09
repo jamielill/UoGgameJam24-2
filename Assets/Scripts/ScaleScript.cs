@@ -28,6 +28,12 @@ public class ScaleScript : MonoBehaviour
     {
         MoveScaleUp();
 
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            ResetScales();
+        }
+
     }
 
     private void OnParticleCollision(GameObject particleSystem)
@@ -64,9 +70,20 @@ public class ScaleScript : MonoBehaviour
         }
     }
 
+    public void ResetScales()
+    {
+        colEvents.Clear();
+        //transform.position = scaleTop.position;
+    }
+
 
     public int GetCollision()
     {
         return colEvents.Count;
+    }
+
+    public void SetItemMass(float inMass)
+    {
+        weight = inMass / 1000;
     }
 }

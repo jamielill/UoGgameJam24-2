@@ -4,9 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CandyPicker : MonoBehaviour
 {
+    [Header("Script References")]
+    [SerializeField] ScaleScript scaleScript;
+
+
+    [Header("Raycast")]
     [SerializeField] float rayDist = 50f;
 
     private GameObject chosenItem;
@@ -14,7 +20,9 @@ public class CandyPicker : MonoBehaviour
     private bool isPouringSweets;
 
 
-    [SerializeField] GameObject candyObject, candyVisual;
+    [Header("Candy Shelf")]
+    [SerializeField] GameObject candyObject;
+    [SerializeField] GameObject candyVisual;
     [SerializeField] Transform itemPosOnShelf;
     Vector3 mousePos;
 
@@ -22,8 +30,15 @@ public class CandyPicker : MonoBehaviour
     [SerializeField] float smoothTime = 10f;
     Vector3 vel = Vector3.zero;
 
+
+    [Header("Particle Visuals")]
     [SerializeField] ParticleSystem currentCandyParticles;
     [SerializeField] Material[] candyMats;
+
+
+    [Header("Candy Image Visuals")]
+    [SerializeField] Image chosenItemImage;
+    [SerializeField] Sprite[] candyImages;
 
     void Start()
     {
@@ -153,7 +168,8 @@ public class CandyPicker : MonoBehaviour
     {
         ParticleSystem.MainModule psMain = currentCandyParticles.main;
         ParticleSystem.ShapeModule psShape = currentCandyParticles.shape;
-        //Material psMat = currentCandyParticles.GetComponent<ParticleSystemRenderer>().material;
+
+
 
         switch (chosenItem.name)
         {
@@ -165,14 +181,22 @@ public class CandyPicker : MonoBehaviour
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[0];
 
+                chosenItemImage.sprite = candyImages[0];
+
+                scaleScript.SetItemMass(1);
+
                 break;
             case "Item2":
                 //
-                psMain.startSize = 0.1f;
+                psMain.startSize = 1f;
                 psMain.startSpeed = 1;
                 //psMain.startColor = Color.red;
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[1];
+
+                chosenItemImage.sprite = candyImages[1];
+
+                scaleScript.SetItemMass(1.1f);
 
                 break;
             case "Item3":
@@ -183,6 +207,10 @@ public class CandyPicker : MonoBehaviour
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[2];
 
+                chosenItemImage.sprite = candyImages[2];
+
+                scaleScript.SetItemMass(0.8f);
+
                 break;
             case "Item4":
                 //
@@ -191,6 +219,10 @@ public class CandyPicker : MonoBehaviour
                 //psMain.startColor = Color.yellow;
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[3];
+
+                chosenItemImage.sprite = candyImages[3];
+
+                scaleScript.SetItemMass(0.3f);
 
                 break;
             case "Item5":
@@ -201,14 +233,48 @@ public class CandyPicker : MonoBehaviour
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[4];
 
+                chosenItemImage.sprite = candyImages[4];
+
+                scaleScript.SetItemMass(0.4f);
+
                 break;
             case "Item6":
                 //
-                psMain.startSize = 1f;
+                psMain.startSize = .4f;
                 psMain.startSpeed = 1;
                 //psMain.startColor = Color.cyan;
 
-                currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[5];   
+                currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[5];
+
+                chosenItemImage.sprite = candyImages[5];
+
+                scaleScript.SetItemMass(0.25f);
+
+                break;
+            case "Item7":
+                //
+                psMain.startSize = .3f;
+                psMain.startSpeed = 2;
+                //psMain.startColor = Color.magenta;
+
+                currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[6];
+
+                chosenItemImage.sprite = candyImages[6];
+
+                scaleScript.SetItemMass(0.1f);
+
+                break;
+            case "Item8":
+                //
+                psMain.startSize = .5f;
+                psMain.startSpeed = 1;
+                //psMain.startColor = Color.cyan;
+
+                currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[7];
+
+                chosenItemImage.sprite = candyImages[7];
+
+                scaleScript.SetItemMass(0.4f);
 
                 break;
 
