@@ -3,10 +3,10 @@ using System.Collections;
 
 public class CameraControl : MonoBehaviour
 {
-    public float rotationSpeed = 90f; // Rotation speed in degrees per second, exposed in the Inspector
+    public float rotationSpeed = 90f;
 
-    private bool isRotating = false; // Tracks if the camera is currently rotating
-    private float targetYRotation = 0f; // Target Y rotation angle
+    private bool isRotating = false; 
+    private float targetYRotation = 0f;  // scrapped
 
     void Update()
     {
@@ -25,17 +25,18 @@ public class CameraControl : MonoBehaviour
 
     IEnumerator RotateCamera(float targetAngle)
     {
-        isRotating = true; // Indicate that rotation has started
+        isRotating = true; 
         Quaternion targetRotation = Quaternion.Euler(0, targetAngle, 0);
         
         while (Quaternion.Angle(transform.rotation, targetRotation) > 0.01f)
         {
-            // Perform smooth rotation towards the target angle at a constant speed
+            //smooth rotation towards the target angle at a constant speed
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             yield return null;
         }
 
         transform.rotation = targetRotation; // Ensure the rotation exactly reaches the target
-        isRotating = false; // Indicate that rotation is complete
+        isRotating = false;
     }
 }
+
