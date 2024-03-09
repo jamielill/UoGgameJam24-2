@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -53,6 +54,7 @@ public class CandyPicker : MonoBehaviour
             {
                 //something here when the candy is being poured
                 currentCandyParticles.Play();
+                CandyParticles();
                 Debug.Log("particles");
 
             }
@@ -145,9 +147,58 @@ public class CandyPicker : MonoBehaviour
     }
 
 
+    //setup the particles system for each candy type
     void CandyParticles()
     {
+        ParticleSystem.MainModule psMain = currentCandyParticles.main;
+        ParticleSystem.ShapeModule psShape = currentCandyParticles.shape;
 
+        switch (chosenItem.name)
+        {
+            case "Item1":
+                //
+                psMain.startSize = 0.4f;
+                psMain.startSpeed = 2;
+                psMain.startColor = Color.white;
+
+                break;
+            case "Item2":
+                //
+                psMain.startSize = 0.1f;
+                psMain.startSpeed = 1;
+                psMain.startColor = Color.red;
+
+                break;
+            case "Item3":
+                //
+                psMain.startSize = 0.7f;
+                psMain.startSpeed = 3;
+                psMain.startColor = Color.blue;
+
+                break;
+            case "Item4":
+                //
+                psMain.startSize = 0.5f;
+                psMain.startSpeed = 2;
+                psMain.startColor = Color.yellow;
+
+                break;
+            case "Item5":
+                //
+                psMain.startSize = .6f;
+                psMain.startSpeed = 4;
+                psMain.startColor = Color.magenta;
+
+                break;
+            case "Item6":
+                //
+                psMain.startSize = 1f;
+                psMain.startSpeed = 1;
+                psMain.startColor = Color.cyan;
+
+                break;
+
+        }
     }
 
 
