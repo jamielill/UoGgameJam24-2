@@ -243,9 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f894b0193244e43afbac95c68b77eef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleMoveSpeed: 2
-  approachSpeed: 3
-  targetPosition: {fileID: 963194228}
+  moveSpeed: 3
 --- !u!65 &386975004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -350,7 +348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &536040268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1971,7 +1969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1498708497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2228,7 +2226,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1977458702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1397042605}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1977458702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2296,8 +2306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2baa986cdddbe4a19b9d88123e1bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPrefabs:
-  - {fileID: 5687159565621161198, guid: dfbc394285e789c26aa931d5a43b2f4e, type: 3}
+  npcPrefab: {fileID: 0}
 --- !u!4 &2040772142
 Transform:
   m_ObjectHideFlags: 0
