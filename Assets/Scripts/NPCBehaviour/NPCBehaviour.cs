@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class NPCBehavior : MonoBehaviour
 {
@@ -10,11 +9,6 @@ public class NPCBehavior : MonoBehaviour
     private float leftBound = -5f; // Left boundary for idle movement.
     private float rightBound = 5f; // Right boundary for idle movement.
     private float direction = 1f; // Direction of movement, 1 for right, -1 for left.
-
-    /*public GameObject npcPrefab;//prefab for npc
-    public List<Vector3> queuePosition = new List<Vector3>();//list for positions in the queue
-    private int queueIndex = 0;//keep track of next position in queue*/
-    
 
     void Start()
     {
@@ -39,7 +33,6 @@ public class NPCBehavior : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             isMovingToCamera = true;
-            //QueueUp();
         }
     }
 
@@ -61,13 +54,4 @@ public class NPCBehavior : MonoBehaviour
         moveDirection.y = 0;
         transform.position += moveDirection * approachSpeed * Time.deltaTime;
     }
-
-    /*void QueueUp()
-    {
-        if (queueIndex < queuePosition.Count)
-        {
-            Instantiate(npcPrefab, queuePosition[queueIndex], Quaternion.identity);
-            queueIndex++;
-        }
-    }*/
 }

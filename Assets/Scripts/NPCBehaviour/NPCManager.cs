@@ -3,12 +3,9 @@ using System.Collections.Generic;
 
 public class NPCManager : MonoBehaviour
 {
-    //public Transform[] queuePositions;//array for queue pos
-
     public GameObject[] npcPrefabs; // Array to hold NPC prefabs
     private static List<NPCBehavior> idleNPCs = new List<NPCBehavior>();
     private static bool isAnyNPCActive = false;
-    
 
     /*void Update()
     {
@@ -22,20 +19,6 @@ public class NPCManager : MonoBehaviour
             TryActivateNPC();
         }
     }*/
-
-    //Queing start
-    /*void Start()
-    {
-        // Instantiate NPCs at queue positions.
-        foreach (Transform position in queuePositions)
-        {
-            foreach (GameObject prefab in npcPrefabs)
-            {
-                Instantiate(prefab, position.position, position.rotation);
-            }
-        }
-    }*/
-    //Queing end
 
     public void CreateRandomNPC()
     {
