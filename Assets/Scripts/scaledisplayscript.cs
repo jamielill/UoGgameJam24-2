@@ -20,6 +20,6 @@ public class scaledisplayscript : MonoBehaviour
     void Update()
     {
         WeightSlider.value = scalesscript.GetList().Count;
-        Debug.Log(scalesscript.GetList().Count);
+        //Debug.Log(scalesscript.GetList().Count);
     }
 }

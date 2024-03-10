@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -144,8 +144,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8509569209506487393, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509569209506487393, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509569209506487393, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509569209506487393, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.52
+      value: 3.17
       objectReference: {fileID: 0}
     - target: {fileID: 8509569209506487393, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1561,6 +1573,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5687159565621161198, guid: dfbc394285e789c26aa931d5a43b2f4e, type: 3}
   m_PrefabInstance: {fileID: 4857938245110746444}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1196780669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7562708426756890968, guid: dfbc394285e789c26aa931d5a43b2f4e, type: 3}
+  m_PrefabInstance: {fileID: 4857938245110746444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196780668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f894b0193244e43afbac95c68b77eef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1200506177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2591,6 +2614,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2040772142}
   - component: {fileID: 2040772141}
+  - component: {fileID: 2040772144}
+  - component: {fileID: 2040772143}
   m_Layer: 0
   m_Name: NPCManager
   m_TagString: Untagged
@@ -2626,6 +2651,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2040772143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040772140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430fce42bc7104d40ada811023a14a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 1196780669}
+  scoringSystem: {fileID: 2040772144}
+  scale: {fileID: 1570368205}
+--- !u!114 &2040772144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040772140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2ca3047e3f8259f95685c887ab8538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2073682455
 GameObject:
   m_ObjectHideFlags: 0
