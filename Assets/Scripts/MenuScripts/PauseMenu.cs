@@ -26,6 +26,7 @@ public class PauseMenu : MonoBehaviour
             GameplayUI.SetActive(false);
             PauseMenuUI.SetActive(true);
             paused = true;
+            Time.timeScale = 0.0f;
         }
     }
 
@@ -33,6 +34,7 @@ public class PauseMenu : MonoBehaviour
     {
         GameplayUI.SetActive(true);
         PauseMenuUI.SetActive(false);
+        Time.timeScale = 1.0f;
         paused= false;
     }
 
