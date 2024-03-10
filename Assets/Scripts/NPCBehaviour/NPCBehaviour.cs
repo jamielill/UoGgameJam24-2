@@ -8,11 +8,21 @@ public class NPCBehavior : MonoBehaviour
     private bool isApproaching = false;
     private bool isLeaving = false;
     private Coroutine leaveRoutine = null;
+    public Sprite[] sprites; // Assign this array in the Inspector with your 5 sprites
+    private SpriteRenderer spriteRenderer;
+
 
     public int randomValue; 
-    private void Awake()
+ private void Awake()
     {
         targetPosition = Camera.main.transform;
+        
+        // Get the SpriteRenderer component and assign a random sprite
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (sprites != null && sprites.Length > 0 && spriteRenderer != null)
+        {
+            spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
+        }
     }
 
     private void Update()
@@ -46,7 +56,7 @@ public class NPCBehavior : MonoBehaviour
         Vector3 direction = (new Vector3(targetPosition.position.x, 0, targetPosition.position.z) - new Vector3(transform.position.x, 0, transform.position.z)).normalized;
         transform.position += direction * moveSpeed * Time.deltaTime;
 
-        if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(targetPosition.position.x, 0, targetPosition.position.z)) <= 5f)
+        if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(targetPosition.position.x, 0, targetPosition.position.z)) <= 6f)
         {
             isApproaching = false;
             leaveRoutine = StartCoroutine(WaitAndLeave(30f)); // Wait for 5 seconds then leave
