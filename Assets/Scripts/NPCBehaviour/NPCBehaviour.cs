@@ -75,7 +75,7 @@ public class NPCBehavior : MonoBehaviour
     private void Leave()
     {
         transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-        if (transform.position.x > 30) // Assumes 30 units is off-screen for your setup.
+        if (transform.position.x > 30) // Assumes 30 units is off-screen.
         {
             Destroy(gameObject);
         }
