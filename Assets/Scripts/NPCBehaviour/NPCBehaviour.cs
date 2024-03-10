@@ -9,6 +9,7 @@ public class NPCBehavior : MonoBehaviour
     private bool isLeaving = false;
     private Coroutine leaveRoutine = null;
 
+    public int randomValue; 
     private void Awake()
     {
         targetPosition = Camera.main.transform;
@@ -56,6 +57,12 @@ public class NPCBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         isLeaving = true;
+    }
+
+    public void AssignRandomValue(int minValue, int maxValue)
+    {
+        randomValue = Random.Range(minValue, maxValue);
+        Debug.Log($"NPC's Random Value: {randomValue}");
     }
 
     public void BeginLeaving()
