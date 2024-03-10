@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 if (Input.GetKeyDown(KeyCode.W))
 {
     // Assign a random value to the NPC for scoring purposes
-    npc.AssignRandomValue(100, 400); // Example range
+    npc.AssignRandomValue(1, 100); // Example range
     npc.UpdateText(npc.randomValue.ToString());
     Debug.Log("Yo the target score is " + npc.randomValue);
 }

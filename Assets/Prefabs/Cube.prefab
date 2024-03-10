@@ -27,8 +27,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531271878970287789}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9.21}
-  m_LocalScale: {x: 0.28153497, y: 0.28153497, z: 0.28153497}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0078064017, y: 0.0078064017, z: 0.0078064017}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6009281238839709038}
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 632, y: 42}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1264, y: 578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3420150069489283027
@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 60
   m_TargetDisplay: 0
 --- !u!114 &7391143000432492718
 MonoBehaviour:
@@ -129,15 +129,15 @@ RectTransform:
   m_GameObject: {fileID: 2629239117876804253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.16941422, y: 0.16941422, z: 0.16941422}
+  m_LocalScale: {x: 0.79084253, y: 0.79084253, z: 0.79084253}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5586488568781449707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.81174684, y: 0.55200005}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -561, y: -104}
-  m_SizeDelta: {x: -38, y: -209}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9201506476462588762
 CanvasRenderer:
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 214.09
+  m_fontSizeBase: 214.09
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f894b0193244e43afbac95c68b77eef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 5
   sprites:
   - {fileID: 21300000, guid: 909af35cb4100d640b2e458026a6a9a5, type: 3}
   - {fileID: 21300000, guid: 45db0fb86074c8e4f9d2688605020def, type: 3}
@@ -330,7 +330,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 84
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -633,6 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  sprites: []
   randomValue: 0
 --- !u!65 &386975004
 BoxCollider:
@@ -7814,18 +7815,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3420150069489283027, guid: dfbc394285e789c26aa931d5a43b2f4e, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
     - target: {fileID: 5687159565621161198, guid: dfbc394285e789c26aa931d5a43b2f4e, type: 3}
       propertyPath: m_Name
       value: Cube
       objectReference: {fileID: 0}
-    - target: {fileID: 7562708426756890968, guid: dfbc394285e789c26aa931d5a43b2f4e, type: 3}
-      propertyPath: moveSpeed
-      value: 5
+    - target: {fileID: 7800491947773656627, guid: dfbc394285e789c26aa931d5a43b2f4e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 17
       objectReference: {fileID: 0}
-    - target: {fileID: 7562708426756890968, guid: dfbc394285e789c26aa931d5a43b2f4e, type: 3}
-      propertyPath: targetPosition
-      value: 
-      objectReference: {fileID: 963194228}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
