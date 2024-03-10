@@ -852,7 +852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8509569209506487393, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.01
+      value: -5.86
       objectReference: {fileID: 0}
     - target: {fileID: 8509569209506487393, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1072,6 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc: {fileID: 142037025}
   scoringSystem: {fileID: 1043008357}
+  scale: {fileID: 678909280}
 --- !u!114 &1043008357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6339,6 +6340,8 @@ MonoBehaviour:
   candyObject: {fileID: 1764478533}
   candyVisual: {fileID: 1776761354}
   itemPosOnShelf: {fileID: 1812677123}
+  allShelfItems: []
+  allShelfPositions: []
   smoothTime: 60
   currentCandyParticles: {fileID: 1202963235}
   candyMats:
