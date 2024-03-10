@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class CandyPicker : MonoBehaviour
 {
-    [Header("Script References")]
+    [Header("Script/Object References")]
     [SerializeField] ScaleScript scaleScript;
 
 
@@ -92,8 +92,6 @@ public class CandyPicker : MonoBehaviour
                 StopCoroutine(PickItem());
             }
         }
-
-        
 
     }
 
