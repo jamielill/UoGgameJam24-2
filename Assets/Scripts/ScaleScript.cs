@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScaleScript : MonoBehaviour
 {
     [SerializeField] ParticleSystem ps;
-    [SerializeField] List<ParticleCollisionEvent> colEvents;
+    [SerializeField]   List<ParticleCollisionEvent> colEvents;
 
     [SerializeField] float scaleReturnSpeed = 2f;
     [SerializeField] float itemMass = .1f;
@@ -80,6 +80,11 @@ public class ScaleScript : MonoBehaviour
     public int GetCollision()
     {
         return colEvents.Count;
+    }
+
+    public List<ParticleCollisionEvent> GetList(){
+
+        return colEvents;
     }
 
     public void SetItemMass(float inMass)
