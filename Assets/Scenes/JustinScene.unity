@@ -131,9 +131,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5639746035445236893, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6897416799068149949, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
       propertyPath: m_Name
       value: Scales
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314599945569135869, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8509569209506487393, guid: 29bb2cfacb2d7e1469d6ec5b814a2b38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -541,6 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  randomValue: 0
 --- !u!65 &386975004
 BoxCollider:
   m_ObjectHideFlags: 0
