@@ -5,14 +5,11 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-//using UnityEngine.UIElements;
-using UnityEngine.EventSystems;
 
 public class CandyPicker : MonoBehaviour
 {
     [Header("Script/Object References")]
     [SerializeField] ScaleScript scaleScript;
-    [SerializeField] EventSystem eventSys;
 
 
     [Header("Raycast")]
@@ -95,26 +92,6 @@ public class CandyPicker : MonoBehaviour
                 StopCoroutine(PickItem());
             }
         }
-
-        
-        if(Input.GetKeyDown(KeyCode.Return))
-        {
-            PointerEventData pointerED = new PointerEventData(eventSys);
-            pointerED.position = Input.mousePosition;
-
-
-
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, rayDist))
-            {
-                Debug.Log(hit.collider.gameObject);
-
-            }
-        }
-        
 
     }
 
