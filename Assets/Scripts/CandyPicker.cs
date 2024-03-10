@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,11 @@ public class CandyPicker : MonoBehaviour
     [SerializeField] GameObject candyVisual;
     [SerializeField] Transform itemPosOnShelf;
     Vector3 mousePos;
+    GameObject hoverItem;
+    [SerializeField] GameObject[] allShelfItems;
+    [SerializeField] Transform[] allShelfPositions;
+
+    //[SerializeField] Transform hoverMoveToPos;
 
     //smooth item movement
     [SerializeField] float smoothTime = 10f;
@@ -48,6 +54,14 @@ public class CandyPicker : MonoBehaviour
         candyObject.transform.position = itemPosOnShelf.position;
 
         currentCandyParticles.Pause();
+
+        hoverItem = null;
+
+        for(int i = 0; i < allShelfItems.Length; i++)
+        {
+            allShelfItems[i].transform.position = allShelfPositions[i].position;
+        }
+
     }
 
     void Update()
@@ -93,6 +107,8 @@ public class CandyPicker : MonoBehaviour
             }
         }
 
+        //hovering over shelf items will make them bigger when mouse is over them 
+        HoverOverItem();
     }
 
 
@@ -276,6 +292,31 @@ public class CandyPicker : MonoBehaviour
 
                 break;
 
+        }
+    }
+
+    void HoverOverItem()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, rayDist))
+        {
+            hoverItem = hit.collider.gameObject;
+
+            //hoverItem.transform.position = hoverMoveToPos.position;
+            hoverItem.transform.position = Vector3.SmoothDamp(hoverItem.transform.position, Camera.main.transform.position, ref vel, Time.deltaTime * smoothTime*15);
+            //hoverItem.transform.position = new Vector3(hoverItem.transform.position.x + 0.005f, hoverItem.transform.position.y, hoverItem.transform.position.z);
+
+        }
+        if(hit.collider == null)
+        {
+            for (int i = 0; i < allShelfItems.Length; i++)
+            {
+                allShelfItems[i].transform.position = allShelfPositions[i].position;
+            }
+
+            hoverItem = null;
         }
     }
 
