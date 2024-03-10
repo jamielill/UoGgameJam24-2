@@ -34,8 +34,8 @@ public class PauseMenu : MonoBehaviour
     {
         GameplayUI.SetActive(true);
         PauseMenuUI.SetActive(false);
-        Time.timeScale = 1.0f;
         paused= false;
+        Time.timeScale = 1.0f;
     }
 
     public void options()
