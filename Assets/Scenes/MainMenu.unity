@@ -501,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 2430350500099518162, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1584104765}
     - target: {fileID: 2430350500099518162, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetFullscreen
@@ -658,6 +658,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6304026940337583692, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304026940337583692, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304026940337583692, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1584104765}
+    - target: {fileID: 6304026940337583692, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304026940337583692, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304026940337583692, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Optionsmenuscript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304026940337583692, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6424222448032304356, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -669,6 +697,34 @@ PrefabInstance:
     - target: {fileID: 7258963159029524506, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658758838029265191, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658758838029265191, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658758838029265191, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1584104765}
+    - target: {fileID: 7658758838029265191, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658758838029265191, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTextureQuality
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658758838029265191, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Optionsmenuscript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658758838029265191, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7882460918561762878, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
