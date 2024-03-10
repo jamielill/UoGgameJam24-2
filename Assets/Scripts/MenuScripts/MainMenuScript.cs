@@ -9,7 +9,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public GameObject OptionsMenu;
     public GameObject MainMenu;
-    [SerializeField] SceneAsset sceneName;
+    //[SerializeField] SceneAsset sceneName;
 
     public void Quit()
     {
