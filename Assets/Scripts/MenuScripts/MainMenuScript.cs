@@ -20,7 +20,6 @@ public class MainMenuScript : MonoBehaviour
     public void LoadGame(string scenename)
     {
         SceneManager.LoadScene(scenename);
-        Debug.Log(scenename);
         Debug.Log("the new game button was pressed");
     }
     

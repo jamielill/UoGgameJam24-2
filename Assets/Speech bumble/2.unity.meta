@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/JamiesMainMenu.unity.meta
+guid: d1ba2dbec6bb653d0bb11a68c5bfa906
+=======
 guid: b0ebccdb779335c46907b442422dc0e8
+>>>>>>> main:Assets/Scenes/OsScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
