@@ -25,6 +25,7 @@ public class CandyPicker : MonoBehaviour
     [SerializeField] GameObject candyVisual;
     [SerializeField] Transform itemPosOnShelf;
     Vector3 mousePos;
+    [SerializeField] GameObject hoverItem;
 
     //smooth item movement
     [SerializeField] float smoothTime = 10f;
@@ -48,6 +49,8 @@ public class CandyPicker : MonoBehaviour
         candyObject.transform.position = itemPosOnShelf.position;
 
         currentCandyParticles.Pause();
+
+        hoverItem = null;
     }
 
     void Update()
@@ -93,6 +96,8 @@ public class CandyPicker : MonoBehaviour
             }
         }
 
+        //hovering over shelf items will make them bigger when mouse is over them 
+        HoverOverItem();
     }
 
 
@@ -276,6 +281,32 @@ public class CandyPicker : MonoBehaviour
 
                 break;
 
+        }
+    }
+
+    void HoverOverItem()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, rayDist))
+        {
+            /*chosenItem = hit.collider.gameObject;
+            Debug.Log(chosenItem);
+
+
+            isItemChosen = true;*/
+            
+
+            hoverItem = hit.collider.gameObject;
+            hoverItem.transform.localScale = new Vector3(hoverItem.transform.localScale.x, 1.0005f, 1.0005f);
+
+        }
+        else
+        {
+            
+            //hoverItem.transform.localScale = new Vector3(hoverItem.transform.localScale.x, hoverItem.transform.localScale.y, hoverItem.transform.localScale.z);
+            hoverItem = null;
         }
     }
 
