@@ -15,9 +15,9 @@ public class Words_t : MonoBehaviour
     {
 
         A = new List<string>(); //the list and its components, 'A.Add("here add the candy or product") 
-        A.Add("A");
-        A.Add("B");
-        A.Add("C");
+        A.Add("Popcorn");
+        A.Add("Candy");
+        A.Add("Drink");
 
 
         texto_Random();
