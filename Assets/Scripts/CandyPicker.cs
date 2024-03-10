@@ -11,6 +11,7 @@ public class CandyPicker : MonoBehaviour
 {
     [Header("Script/Object References")]
     [SerializeField] ScaleScript scaleScript;
+    [SerializeField] GameManager gameManager;
 
 
     [Header("Raycast")]
@@ -70,7 +71,7 @@ public class CandyPicker : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))    //testing purpose to reset the chosen item to nothing
         {
             chosenItem = null;
-            Debug.Log(chosenItem);
+            //Debug.Log(chosenItem);
         }
 
 
@@ -85,7 +86,7 @@ public class CandyPicker : MonoBehaviour
                 //something here when the candy is being poured
                 currentCandyParticles.Play();
                 CandyParticles();
-                Debug.Log("particles");
+                //Debug.Log("particles");
 
             }
             else
@@ -109,6 +110,8 @@ public class CandyPicker : MonoBehaviour
 
         //hovering over shelf items will make them bigger when mouse is over them 
         HoverOverItem();
+
+        
     }
 
 
@@ -141,13 +144,13 @@ public class CandyPicker : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            Debug.Log("Pouring " + chosenItem);
+            //Debug.Log("Pouring " + chosenItem);
 
             isPouringSweets = true;
         }
         if (Input.GetMouseButtonUp(1))
         {
-            Debug.Log("End pour");
+            //Debug.Log("End pour");
 
             isPouringSweets = false;
             isItemChosen = false;
@@ -184,14 +187,12 @@ public class CandyPicker : MonoBehaviour
         ParticleSystem.ShapeModule psShape = currentCandyParticles.shape;
 
 
-
         switch (chosenItem.name)
         {
             case "Item1":
                 //
                 psMain.startSize = 0.4f;
                 psMain.startSpeed = 2;
-                //psMain.startColor = Color.white;
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[0];
 
@@ -204,7 +205,6 @@ public class CandyPicker : MonoBehaviour
                 //
                 psMain.startSize = 1f;
                 psMain.startSpeed = 1;
-                //psMain.startColor = Color.red;
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[1];
 
@@ -217,7 +217,6 @@ public class CandyPicker : MonoBehaviour
                 //
                 psMain.startSize = 0.7f;
                 psMain.startSpeed = 3;
-                //psMain.startColor = Color.blue;
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[2];
 
@@ -230,7 +229,6 @@ public class CandyPicker : MonoBehaviour
                 //
                 psMain.startSize = 0.5f;
                 psMain.startSpeed = 2;
-                //psMain.startColor = Color.yellow;
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[3];
 
@@ -243,7 +241,6 @@ public class CandyPicker : MonoBehaviour
                 //
                 psMain.startSize = .6f;
                 psMain.startSpeed = 4;
-                //psMain.startColor = Color.magenta;
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[4];
 
@@ -256,7 +253,6 @@ public class CandyPicker : MonoBehaviour
                 //
                 psMain.startSize = .4f;
                 psMain.startSpeed = 1;
-                //psMain.startColor = Color.cyan;
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[5];
 
@@ -269,7 +265,6 @@ public class CandyPicker : MonoBehaviour
                 //
                 psMain.startSize = .3f;
                 psMain.startSpeed = 2;
-                //psMain.startColor = Color.magenta;
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[6];
 
@@ -282,7 +277,6 @@ public class CandyPicker : MonoBehaviour
                 //
                 psMain.startSize = .5f;
                 psMain.startSpeed = 1;
-                //psMain.startColor = Color.cyan;
 
                 currentCandyParticles.GetComponent<ParticleSystemRenderer>().material = candyMats[7];
 
@@ -304,7 +298,7 @@ public class CandyPicker : MonoBehaviour
         {
             hoverItem = hit.collider.gameObject;
 
-            //hoverItem.transform.position = hoverMoveToPos.position;
+
             if(hoverItem.tag != "WorldUI")
             {
                 hoverItem.transform.position = Vector3.SmoothDamp(hoverItem.transform.position, hoverMoveToPos.transform.position, ref vel, Time.deltaTime * smoothTime*15);
