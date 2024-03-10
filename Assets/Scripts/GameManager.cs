@@ -24,10 +24,9 @@ public class GameManager : MonoBehaviour
         {
             // Calculate and log the score based on the NPC's random value
             int score = scoringSystem.CalculateScore(scale.GetList().Count, npc.randomValue);
-            Debug.Log($"Calculated Score: {score}");
+            Debug.Log("u gave me " + scale.GetList().Count + "But I asked for " + npc.randomValue + "...Keep the change fool... " + score);
             scale.ResetScales();
         }
-        Debug.Log(scale.GetList().Count);
     }
 }
 

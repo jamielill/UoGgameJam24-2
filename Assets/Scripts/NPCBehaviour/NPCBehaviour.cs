@@ -49,7 +49,7 @@ public class NPCBehavior : MonoBehaviour
         if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(targetPosition.position.x, 0, targetPosition.position.z)) <= 5f)
         {
             isApproaching = false;
-            leaveRoutine = StartCoroutine(WaitAndLeave(5f)); // Wait for 5 seconds then leave
+            leaveRoutine = StartCoroutine(WaitAndLeave(30f)); // Wait for 5 seconds then leave
         }
     }
 
