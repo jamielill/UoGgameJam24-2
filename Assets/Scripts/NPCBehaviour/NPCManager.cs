@@ -1,11 +1,28 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class NPCManager : MonoBehaviour
 {
     public GameObject npcPrefab;
     private List<NPCBehavior> npcs = new List<NPCBehavior>();
     private NPCBehavior currentNPC;
+
+    private float spawnDelay = 10.0f; // Time in seconds between each NPC spawn.
+
+     void Start()
+    {
+        StartCoroutine(SpawnNPCRoutine());
+    }
+
+     IEnumerator SpawnNPCRoutine()
+    {
+        while (true) // Infinite loop to keep spawning NPCs.
+        {
+            SpawnNPC();
+            yield return new WaitForSeconds(spawnDelay); // Wait for 10 seconds before spawning the next NPC.
+        }
+    }
 
     private void Update()
     {
