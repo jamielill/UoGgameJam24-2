@@ -24,6 +24,8 @@ public class NPCManager : MonoBehaviour
         }
     }
 
+    
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.N))
@@ -51,13 +53,16 @@ public class NPCManager : MonoBehaviour
         npcs.Add(npcBehavior);
     }
 
-    void ActivateNPC()
+ void ActivateNPC()
+{
+    if (npcs.Count > 0)
     {
-        if (npcs.Count > 0)
-        {
-            currentNPC = npcs[0];
-            currentNPC.BeginApproach();
-            npcs.RemoveAt(0); // Remove the NPC from the list to prevent reactivation.
-        }
+        currentNPC = npcs[0];
+        currentNPC.BeginApproach();
+        // Update the text with the current random value or any other message
+        currentNPC.UpdateText($"Target: {currentNPC.randomValue}");
+        npcs.RemoveAt(0); // Remove the NPC from the list to prevent reactivation.
     }
+}
+
 }

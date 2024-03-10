@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class NPCBehavior : MonoBehaviour
 {
@@ -88,6 +89,16 @@ public class NPCBehavior : MonoBehaviour
             }
         }
     }
+
+    public void UpdateText(string text)
+{
+    var tmpText = GetComponentInChildren<TextMeshProUGUI>(); // Or TextMeshPro for 3D text
+    if (tmpText != null)
+    {
+        tmpText.text = text;
+    }
+}
+
 
     private void Leave()
     {
