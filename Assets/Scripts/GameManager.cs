@@ -13,12 +13,14 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            // Assign a random value to the NPC for scoring purposes
-            npc.AssignRandomValue(100, 400); // Example range
-            Debug.Log("Yo the target score is " +  npc.randomValue);
-        }
+if (Input.GetKeyDown(KeyCode.W))
+{
+    // Assign a random value to the NPC for scoring purposes
+    npc.AssignRandomValue(100, 400); // Example range
+    npc.UpdateText(npc.randomValue.ToString());
+    Debug.Log("Yo the target score is " + npc.randomValue);
+}
+
         
         if (Input.GetKeyDown(KeyCode.E))
         {
