@@ -19,7 +19,7 @@ public class scaledisplayscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //WeightSlider.value = scalesscript.GetList().Count;
-        //Debug.Log(scalesscript.GetList().Count);
+        WeightSlider.value = scalesscript.GetList().Count;
+        Debug.Log(scalesscript.GetList().Count);
     }
 }
