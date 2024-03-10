@@ -9,6 +9,7 @@ public class NPCBehavior : MonoBehaviour
     private bool isLeaving = false;
     private Coroutine leaveRoutine = null;
 
+    public int randomValue; 
     private void Awake()
     {
         targetPosition = Camera.main.transform;
@@ -48,7 +49,7 @@ public class NPCBehavior : MonoBehaviour
         if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(targetPosition.position.x, 0, targetPosition.position.z)) <= 5f)
         {
             isApproaching = false;
-            leaveRoutine = StartCoroutine(WaitAndLeave(5f)); // Wait for 5 seconds then leave
+            leaveRoutine = StartCoroutine(WaitAndLeave(30f)); // Wait for 5 seconds then leave
         }
     }
 
@@ -56,6 +57,12 @@ public class NPCBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         isLeaving = true;
+    }
+
+    public void AssignRandomValue(int minValue, int maxValue)
+    {
+        randomValue = Random.Range(minValue, maxValue);
+        Debug.Log($"NPC's Random Value: {randomValue}");
     }
 
     public void BeginLeaving()
