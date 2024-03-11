@@ -157,7 +157,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.UoGgameJam24-2
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -674,7 +675,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: UoGgameJam24-2
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -682,7 +683,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: UoGgameJam24-2
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: UoGgameJam24-2
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
