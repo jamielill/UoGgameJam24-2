@@ -557,7 +557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 921937808802866043, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 997041352159089789, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_Color.a
@@ -657,7 +657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4068602785609071246, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4070601148808022138, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -709,7 +709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4465430859571821239, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5667713811426740860, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -765,7 +765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6271279391059022199, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6304026940337583692, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -841,7 +841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8315669293177535504, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8702920169524538740, guid: 201ee71550a44fb4eb91136a3921852e, type: 3}
       propertyPath: m_AnchorMax.y
